@@ -66,7 +66,7 @@ public class MainMenu extends ActionBarActivity {
 
     public void startQuiz(View v) {
         Log.d("test1", "button is clicked");
-        Intent myIntent = new Intent(MainMenu.this, Question.class);
+        Intent myIntent = new Intent(this, ChooseGenre.class);
         //myIntent.putExtra("key", value); //Optional parameters
         MainMenu.this.startActivity(myIntent);
     }
