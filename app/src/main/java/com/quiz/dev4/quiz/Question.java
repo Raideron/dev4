@@ -4,7 +4,6 @@ package com.quiz.dev4.quiz;
  * Created by Alex on 22-6-2015.
  */
 public class Question {
-    private int id;
     private String question;
     private String genre;
 

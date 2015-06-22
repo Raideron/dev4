@@ -1,20 +1,46 @@
 package com.quiz.dev4.quiz;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class QuestionActivity extends ActionBarActivity {
+
+    TextView textview;
+    DBHandler myDbHelper;
+
+    private String question;
+    private boolean awnser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+//        DBHandler myDbHelper = new DBHandler();
+        TestAdapter mDbHelper = new TestAdapter(this);
+        mDbHelper.createDatabase();
+        mDbHelper.open();
+
+        Cursor testdata = mDbHelper.getTestData();
+
+        mDbHelper.close();
+
+    }
+
+    public void trueButtonClicked() {
+
+    }
+
+    public void falseButtonClicked() {
+
     }
 
 
