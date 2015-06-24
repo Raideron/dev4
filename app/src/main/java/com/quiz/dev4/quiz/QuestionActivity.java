@@ -9,18 +9,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class ChooseGenre extends ActionBarActivity {
+public class QuestionActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_genre);
+        setContentView(R.layout.activity_question);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_choose_genre, menu);
+        getMenuInflater().inflate(R.menu.menu_question, menu);
         return true;
     }
 
@@ -39,10 +40,10 @@ public class ChooseGenre extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startQuiz(View v) {
+    public void startResults(View v) {
         Log.d("test1", "button is clicked");
-        Intent myIntent = new Intent(this, QuestionActivity.class);
+        Intent myIntent = new Intent(QuestionActivity.this, Result.class);
         //myIntent.putExtra("key", value); //Optional parameters
-        this.startActivity(myIntent);
+        QuestionActivity.this.startActivity(myIntent);
     }
 }
